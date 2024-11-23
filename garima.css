@@ -1,13 +1,13 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #000,#222);
     color: #fff;
     overflow-x: hidden;
-}
+} */
 
-h1 {
+.garimaH1 {
     text-align: center;
     margin: 20px 0;
     font-size: 2.5rem;
@@ -127,7 +127,7 @@ button.pulse:hover {
 
 #my_head_garima {
     text-align: center;
-    margin-top: 5%; 
+    margin-top: 15%; 
     font-size: 2rem;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
@@ -231,8 +231,12 @@ button.pulse:hover {
 
 
 @media (max-width: 480px) {
-    h1 {
+    .garimaH1 {
         font-size: 1.5rem;
+    }
+
+    .marquee-container_garima{
+        height: auto;
     }
 
     .marquee_garima .template_garima {
@@ -243,5 +247,155 @@ button.pulse:hover {
     #my_head_garima {
         font-size: 1.5rem;
         margin-top: 10%; 
+    }
+}
+
+
+
+/* new code of last template section just above footer part*/
+.resume-section_vishwa {
+    padding: 50px 10px;
+    text-align: center;
+    background-color: #363535;
+    padding-bottom: 10%;
+  }
+  
+  .title_vishwa {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .subtitle_vishwa {
+    font-size: 1.5rem;
+    margin: 10px 0 30px;
+    color: #ccc;
+    animation: slideIn 1.5s ease-in-out;
+  }
+  
+  .cards-container_vishwa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card_vishwa {
+    width: 300px;
+    height: 180px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.3s;
+  }
+  
+  .card_vishwa:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card_vishwa-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card_vishwa:hover .card_vishwa-image img {
+    transform: scale(1.1);
+  }
+  
+  .card-content_vishwa {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .card_vishwa:hover .card-content_vishwa {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-content_vishwa h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  .card-content_vishwa p {
+    font-size: 1rem;
+    color: #bbb;
+  }
+  
+  @media (max-width: 768px) {
+    .title_vishwa {
+      font-size: 2.5rem;
+    }
+  
+    .subtitle_vishwa {
+      font-size: 1.2rem;
+    }
+  
+    .card_vishwa {
+      width: 90%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /* new animation*/
+  .subtitle_vishwa {
+    font-size: 1.5rem;
+    margin: 10px 0 30px;
+    color: #ccc;
+    animation: slideIn 1.5s ease-in-out, pulse 2s infinite ease-in-out;
+}
+
+/* New animation for looping effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

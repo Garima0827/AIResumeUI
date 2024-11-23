@@ -18,6 +18,7 @@
 
 .inner-1{
     display:flex;
+  box-shadow: inset 1px 2px 12px 10px rgba(47, 47, 47, 0.94);
     
     width: 40%;
     height: 50vh;
@@ -31,6 +32,7 @@
     font-family: "Ubuntu", serif;
     font-size: 300%;
     color: white; 
+
 }
 .inner-2{
     display:flex;
@@ -87,13 +89,13 @@
     background-color:rgba(22, 22, 22, 0.395);;
     width:100%;
     height:60vh;
-    border: 4px solid rgb(116, 116, 116);
+    /* border: 4px solid rgb(116, 116, 116); */
 }
 
 @media (max-width: 768px) {
 
     .outermost-div {
-
+        margin-top: 12%;
         flex-direction: column; 
         width:100%
     }
@@ -110,12 +112,12 @@
         grid-template-columns: 1fr 1fr 1fr 1fr; 
         gap: 1vh;
         align-items: center;
-        height: 10vh;
+        height: 5vh;
     }
     .whole-resume{
         position: relative; 
-        height:40vh;
+        height:17vh;
         width:100%;
-        padding: 2vh;
+        padding: 1vh;
         }
 }
