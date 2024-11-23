@@ -1,0 +1,219 @@
+/* General Reset and Body Styling */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #151515;
+    color: white;
+    border: 1px solid #4e4e4e;
+    padding: 10px 2rem;
+    box-shadow: 1px 2px 12px rgba(47, 47, 47, 0.94);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li {
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .nav-links li:hover {
+    background-color: black;
+    box-shadow: inset 2px 2px 12px rgba(42, 42, 42, 0.75);
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  /* Menu Icon for Mobile */
+  .menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #252525;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      padding: 10px 0;
+      gap: 10px;
+    }
+  
+    .nav-links li {
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  }
+  
+  /* Heading Section */
+  .headingSection {
+    background: linear-gradient(to right, #000000, #0202022b);
+    padding: 2rem 0;
+  }
+  
+  .headingSectionInner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .content {
+    color: white;
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .content h1 {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+    margin: 1rem 0 2rem;
+  }
+  
+  .headingButtonsDiv {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn1,
+  .btn2 {
+    font-size: 0.9rem;
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .btn1 {
+    background-color: white;
+    color: black;
+    border: none;
+  }
+  
+  .btn2 {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #3e3e3e;
+  }
+  
+  .btn1:hover {
+    background-color: rgb(41, 41, 41);
+    color: white;
+    box-shadow: inset 1px 1px 8px rgba(255, 255, 255, 0.75);
+  }
+  
+  .btn2:hover {
+    background-color: rgba(47, 47, 47, 0.73);
+    box-shadow: inset 1px 1px 8px rgba(255, 255, 255, 0.85);
+  }
+  
+  /* Animation Section */
+  .containerShadow {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    background: linear-gradient(to right, #000000f6, #02020200);
+    z-index: 100;
+  }
+  
+  .container {
+    z-index: -10;
+    margin: 2rem auto;
+    perspective: 1000px;
+  }
+  
+  .animated-image {
+    width: 100%;
+    max-width: 550px;
+    transform: translateZ(-500px) rotateX(45deg);
+    opacity: 0;
+    animation: appear 1.5s ease-out forwards;
+  }
+  
+  .animated-image1 {
+    animation-delay: 1.5s;
+  }
+  
+  .animated-image2 {
+    animation-delay: 0.5s;
+  }
+  
+  .animated-image3 {
+    animation-delay: 1s;
+  }
+  
+  @keyframes appear {
+    0% {
+      transform: translateZ(0) translateX(-100px) rotateX(0deg) rotateY(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(-200px) rotateX(25deg) rotateY(-30deg);
+      opacity: 1;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .headingSectionInner {
+      flex-direction: column;
+    }
+  
+    .content h1 {
+      font-size: 2rem;
+    }
+  
+    .content p {
+      font-size: 0.9rem;
+    }
+  
+    .animated-image {
+      margin: 0 auto;
+    }
+  }
+  

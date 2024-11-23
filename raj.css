@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@400&display=swap");
+
+.wraper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #ffffff18;
+  top: 0;
+  width: 100%;
+  height: 4.5rem;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  margin-right: 0.3rem;
+  /* padding: 0 20px; */
+  transition: 0.3s ease;
+}
+
+header.active1 {
+  background-color: #a1a1a196;
+  height: 3rem;
+}
+
+header .logo {
+  color: #fff;
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  text-decoration: none;
+  margin-left: 1rem;
+  z-index: 99999;
+}
+
+header .menu {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  transition: 0s;
+}
+
+header .menu-shadow {
+  display: none;
+}
+
+header .menu .close-menu {
+  display: none;
+}
+
+.menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2rem;
+  padding: 0rem 0.5rem;
+  height: 100%;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 1px;
+}
+
+header .menu a:hover,
+header .menu a.active {
+  font-weight: 600;
+  color: crimson;
+  transition: color 0.1s ease-in;
+}
+
+header.active1 .menu a:hover,
+header.active1 .menu a.active {
+  background-color: crimson;
+  color: #fff;
+}
+
+header .show-bar {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.7rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+header .show-bar:hover {
+  background-color: #dddddd63;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 750px) {
+  body header .menu {
+    position: fixed;
+    top: 0;
+    left: -20rem;
+    width: 20rem;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #222;
+    padding: 0;
+    padding-top: 3.5rem;
+    z-index: 99999;
+    overflow-y: auto;
+    transition: left 0.5s linear;
+  }
+
+  body header .menu-active {
+    left: 0;
+  }
+
+  header .menu-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000b7;
+    backdrop-filter: blur(50px);
+  }
+
+  header .shadow-active {
+    display: block;
+  }
+
+  header .menu a {
+    text-align: center;
+    color: #fff;
+    height: 4rem;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 0;
+    transition: 0s;
+  }
+
+  header .menu a.active {
+    font-weight: 600;
+    background: crimson;
+    color: #fff;
+  }
+
+  header .menu a:hover {
+    background-color: crimson;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  header .show-bar {
+    display: block;
+  }
+
+  header .hide-bar {
+    display: none;
+  }
+
+  header .menu .close-menu {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 30px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 0;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.raj-menu-btn {
+  display: inline-block;
+  height: 30px;
+  margin: 25px;
+  position: relative;
+  width: 30px;
+}
+
+.raj-menu-btn span {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #000000;
+  display: block;
+  height: 4px;
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
+  width: 30px;
+  background-color: red;
+}
+
+.raj-menu-btn span:before {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #000000;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: -9px;
+  position: absolute;
+  width: 30px;
+  background-color: red;
+}
+
+.raj-menu-btn span:after {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #000000;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: 9px;
+  position: absolute;
+  width: 30px;
+  background-color: red;
+}
+
+.cross-animation span {
+  -webkit-transition-delay: 0.2s;
+  -webkit-transition-duration: 0s;
+  transition-delay: 0.2s;
+  transition-duration: 0s;
+}
+
+.cross-animation span:before {
+  -webkit-transition-delay: 0.2s, 0s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-delay: 0.2s, 0s;
+  transition-duration: 0.2s;
+  transition-property: margin, transform;
+}
+
+.cross-animation span:after {
+  -webkit-transition-delay: 0.2s, 0s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-delay: 0.2s, 0s;
+  transition-duration: 0.2s;
+  transition-property: margin, transform;
+}
+
+.cross-animation:hover span:before {
+  margin-top: -12px;
+}
+
+.cross-animation:hover span:after {
+  margin-top: 12px;
+}
+
+.cross-animation.open span {
+  -webkit-transition-delay: 0.2s;
+  background-color: rgba(0, 0, 0, 0);
+  transition-delay: 0.2s;
+}
+
+.cross-animation.open span:before {
+  -webkit-transform: rotate(45deg);
+  -webkit-transition-delay: 0s, 0.2s;
+  margin-top: 0;
+  transform: rotate(45deg);
+  transition-delay: 0s, 0.2s;
+}
+
+.cross-animation.open span:after {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition-delay: 0s, 0.2s;
+  margin-top: 0;
+  transform: rotate(-45deg);
+  transition-delay: 0s, 0.2s;
+}
+
+.footer {
+  width: 100%;
+  /* margin-top: 4%;
+  margin-bottom: 2%; */
+  position: relative;
+  height: auto;
+  background-color: #000000;
+  color: #ffff;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .footer-col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+
+.footer .footer-col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  footer-color: rgba(255, 255, 255, 0.2);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+.footer .footer-col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-col ul li {
+  footer-color: #999999;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+}
+
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .footer-col ul li:hover {
+  footer-color: #ffffff;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+}
+
+.footer-col i,
+.footer .social-icons {
+  font-size: 35px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.footer-bottom {
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-bottom-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: inline-flex;
+  gap: 15px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .footer-container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1139px) {
+  .footer-container .social {
+    width: 1000px;
+    display: block;
+  }
+
+  .social h1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .footer .footer-col {
+    width: 33%;
+  }
+
+  .footer .footer-col h1 {
+    font-size: 14px;
+  }
+
+  .footer .footer-col ul li {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .footer .footer-col {
+    width: 50%;
+  }
+
+  .footer .footer-col h1 {
+    font-size: 14px;
+  }
+
+  .footer .footer-col ul li {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .footer .footer-col {
+    width: 100%;
+  }
+}
+
+.raj-modal .modal {
+  position: absolute;
+
+  left: 0;
+  top: 5%;
+  color: black;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.raj-modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  color: black;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 78%;
+  border-radius: 0.5rem;
+}
+
+.raj-modal .close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  color: #000000;
+  background-color: lightgray;
+}
+
+.raj-modal .close-button:hover {
+  background-color: darkgray;
+}
+
+.raj-modal .show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.raj-modal .modal-body {
+  max-height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.raj-modal .modal-body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.raj-modal .modal-body::-webkit-scrollbar-thumb {
+  background: transparent;
+}
