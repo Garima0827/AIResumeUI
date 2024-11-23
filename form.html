@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume form</title>
+</head>
+<style>
+    
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; 
+    color: white; 
+    overflow-x: hidden;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 43%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+  }
+  .pulse {
+    animation: pulseEffect 1s infinite;
+  }
+        
+  #resumeSection {
+    padding: 20px;
+    background-color: #1a1a1a; 
+    text-align: center;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+  }
+  
+  form input:focus, form button:focus {
+    outline: none;
+    border-color: #007bff;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes pulseEffect {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+</style>
+<body>
+    
+  <!-- Resume Creation Section -->
+  <section id="resumeSection" class="hidden">
+    <form id="resumeForm">
+      <h2>Fill Your Details</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="skills">Skills:</label>
+      <input type="text" id="skills" name="skills" placeholder="E.g., JavaScript, CSS" required>
+      
+      <button type="button" id="previewButton">Preview Resume</button>
+    </form>
+    <div id="resumePreview" class="hidden">
+      <h2>Resume Preview</h2>
+      <p id="previewName"></p>
+      <p id="previewEmail"></p>
+      <p id="previewSkills"></p>
+      <button id="downloadPdf">Download PDF</button>
+    </div>
+  </section>
+  <script src="form.js">
+
+  </script>
+</body>
+</html>
